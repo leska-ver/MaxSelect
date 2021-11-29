@@ -1,0 +1,182 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;;
+}
+
+body {
+  padding: 50px;
+  font-family: sans-serif;
+}
+
+/*Общии стили для всех Select-ов*/
+.choices__inner {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background-color: #fff;
+  min-height: auto;
+}
+
+.is-open .choices__inner {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #000;
+  background-color: #fff;
+  min-height: auto;
+}
+
+.choices__list--dropdown {
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+.is-open .choices__list--dropdown {
+  border: 1px solid #000;
+  background-color: #fff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/*Селект. Убрала надпись Press to select. Она же странная ошибка убрали*/
+.choices__list--dropdown .choices__item--selectable.is-highlighted:after {
+  display: none;
+}
+
+/*Это вторая попытка скрыть первый option в селекте, первая попытка в js*/
+#choices--default-item-choice-1 {
+  display: none;
+}
+
+/*Чтобы в is-open и в select-one стрелка не прыгала. Прыгает у тех кто имеет свою иконку*/
+.choices[data-type*=select-one].is-open::after, .choices[data-type*=select-one]:after {
+  margin-top: 0;
+}
+
+
+/*-multi-defaultDiv-*/
+/*Отступ между select-ами*/
+.multi-defaultDiv .choices:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+.multi-defaultDiv .choices__inner {
+  border: 2px solid blue;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(0, 255, 255);
+}
+
+.multi-defaultDiv .choices__heading {
+  font-size: 18px; 
+  line-height: 22px;
+  color:rgb(96, 146, 138);
+  background-color: pink;
+}
+
+/*типа ховер*/
+.multi-defaultDiv .choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: rgb(255, 251, 0);
+}
+
+/*arrow*/
+.multi-defaultDiv .choices[data-type*=select-one]:after {
+  content: "";
+  top: 30%;
+  border: 0;/*так спрятали нарисованую библ.стрелку*/
+  width: 15px;
+  height: 15px;
+  background-image: url("https://avatars.mds.yandex.net/get-zen_doc/1389531/pub_5d10a493b6f01e00afeee348_5d10a4c59b067b00ae2ffb85/scale_1200");
+  background-repeat: no-repeat;
+  background-size: contain;
+}  
+ 
+/*Поворот arrow*/
+.multi-defaultDiv .choices[data-type*=select-one]:focus:after { 
+  box-shadow: 0 0 5px;
+  transform: rotate(180deg);  
+}
+
+/*:hover arrow*/
+.multi-defaultDiv .choices[data-type*=select-one]:hover:after {
+  opacity: .8;  
+}
+
+/*active arrow*/
+.multi-defaultDiv .choices[data-type*=select-one]:active:after {
+  opacity: .6;  
+}
+
+/*group-select*/
+.group-selectDiv .choices__inner {
+  border: 2px solid red;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: red;
+}
+
+/*Типа :focus*/
+.group-selectDiv .choices:focus {
+  box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+  background-color: cadetblue;
+}
+
+.group-selectDiv .choices__inner:hover {
+  background-color: rgb(247, 203, 244);
+}
+
+.group-selectDiv .choices__inner:active {
+  background-color: rgb(250, 200, 143);
+}
+
+.group-selectDiv .choices__heading {
+  font-size: 18px; 
+  line-height: 22px;
+  color:chartreuse;
+  background-color: black;
+}
+
+/*типа ховер option)*/
+.group-selectDiv .choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: cyan;
+}
+
+/*arrow*/
+.group-selectDiv .choices[data-type*=select-one]:after {
+  content: "";
+  top: 30%;
+  border: 0;/*так спрятали нарисованую библ.стрелку*/
+  width: 15px;
+  height: 15px;
+  background-image: url("https://avatars.mds.yandex.net/i?id=2a00000179e5e84e9bc2a61b60dbeb7ae8b8-3675159-images-thumbs&n=13");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*Поворот arrow*/
+.group-selectDiv .choices[data-type*=select-one]:focus:after { 
+  transform: rotate(90deg);  
+}
+
+/*:hover arrow*/
+.group-selectDiv .choices[data-type*=select-one]:hover:after {
+  opacity: .8;  
+}
+
+/*active arrow*/
+.group-selectDiv .choices[data-type*=select-one]:active:after {
+  opacity: .6;  
+}
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxSelect</title>
+    <!--Для кодепена-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"/>
+    <!--Для компа     
+    <link rel="stylesheet" href="css/choices.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <p style="color: blue;">Код Максима, из видео. Я только цвета поставила. Это для header в дипломном проекте.
+      <br>
+      <br>
+      На компе всё работает и кнопки от открывания не скачуть. 
+    </p>
+    <p style="color: red;">https://github.com/Choices-js/Choices - библиотека: 
+      <br>
+      <br>
+      - Installation -&gt; From a CDN -&gt; Or versioned(вторая ссылка для css). Для js последняя ссылка в -&gt; Or versioned
+      <br>
+      <br>
+      - Для скачивания жмём на сайте Code/DownloadZIP -&gt; public/assets -&gt; scripts/choices.min.js и styles/choices.min.css
+    </p>
+    <p style="color: green;">Кнопка просто так сделана из видео.</p>
+    
+    
+    <!-- 1.Select -->
+    <p>1.Обычная библиотечная стилизация</p>
+    <div class="defaultDiv">
+      <button>Нажми</button>
+      <select name="Пол" class="default" aria-label="Выбор пола">
+        <option value="">Введите пол</option>
+        <option value="Мужской">Мужской</option>
+        <option value="Женский">Женский</option>
+      </select>
+    </div>
+
+    <!-- 2.Select в месте с 3.Select -->
+    <p>2.Стилизация если от 2 и больше селектов и они одинаковые. В js для них querySelector в конце дописываем All иначе сработает только один</p>
+    <div class="multi-defaultDiv">
+      <select name="Пол" class="multi-default" aria-label="Выбор пола">
+        <option value="">Введите пол</option>
+        <option value="Мужской">Мужской</option>
+        <option value="Женский">Женский</option>
+      </select>
+      <select name="Пол" class="multi-default" aria-label="Выбор пола">
+        <option value="">Введите пол</option>
+        <option value="Мужской">Мужской</option>
+        <option value="Женский">Женский</option>
+      </select>
+    </div>
+
+    <!-- 4.Select -->
+    <p>3.Стилизация для разных селектов, в пример для отличия от Первого селекта или от братьев с All</p>
+    <div class="group-selectDiv">
+      <select class="group-select">
+        <option value="">Choose a city</option>
+        <optgroup label="UK">
+          <option value="London">London</option>
+          <option value="Manchester">Manchester</option>
+          <option value="Liverpool">Liverpool</option>
+        </optgroup>
+        <optgroup label="FR">
+          <option value="Paris">Paris</option>
+          <option value="Lyon">Lyon</option>
+          <option value="Marseille">Marseille</option>
+        </optgroup>
+        <optgroup label="DE" disabled>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Munich">Munich</option>
+          <option value="Berlin">Berlin</option>
+        </optgroup>
+        <optgroup label="US">
+          <option value="New York">New York</option>
+          <option value="Washington" disabled>Washington</option>
+          <option value="Michigan">Michigan</option>
+        </optgroup>
+        <optgroup label="SP">
+          <option value="Madrid">Madrid</option>
+          <option value="Barcelona">Barcelona</option>
+          <option value="Malaga">Malaga</option>
+        </optgroup>
+        <optgroup label="CA">
+          <option value="Montreal">Montreal</option>
+          <option value="Toronto">Toronto</option>
+          <option value="Vancouver">Vancouver</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!--Для кодепена-->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+    <!--Для компа
+    <script src="js/choices.min.js"></script> -->
+    <script src="js/MaxSelect.js"></script>
+  </body>
+</html>
